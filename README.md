@@ -54,7 +54,7 @@ Agent: Successfully sent 0.0001 SepoliaETH to 0xabc...123
 
 You: send 0.0000001 eth to 0xabc...123
 
-Agent: Failed to get balance: Transaction too soon. Wait at least 5 minutes.
+Agent: Failed to send eth: Transaction too soon. Wait at least 5 minutes.
 ```
 
 ## Setup & Installation
@@ -79,7 +79,8 @@ The `IC_ETH_WALLET_CANISTER` is the ICP canister ID of the wallet canister. When
 ## Run agent
 
 ```bash
-pnpm i && pnpm start
+pnpm i 
+bash ./scripts/start.sh
 ```
 
 ---

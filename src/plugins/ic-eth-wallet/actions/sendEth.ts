@@ -1,18 +1,19 @@
 import {
   Action,
   ActionExample,
-  composeContext,
-  generateObjectDeprecated,
   HandlerCallback,
   IAgentRuntime,
   Memory,
   ModelClass,
   State,
+  composeContext,
+  generateObjectDeprecated,
 } from "@elizaos/core";
 import {
-  icpWalletProvider,
   ICPWalletResponse,
+  icpWalletProvider,
 } from "../providers/wallet/index.ts";
+
 import type { _SERVICE } from "../canisters/ic-eliza-eth-wallet/index.did.d.ts";
 import { formatUnits } from "viem";
 import { getActor } from "../utils.ts";
@@ -123,7 +124,7 @@ export const sendEth: Action = {
       callback?.(responseMsg);
     } catch (error: unknown) {
       const responseMsg = {
-        text: `Failed to get balance: ${
+        text: `Failed to send eth: ${
           error instanceof Error ? error.message : "Unknown error"
         }`,
         action: "GET_BALANCE",
